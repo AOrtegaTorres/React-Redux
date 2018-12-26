@@ -43,10 +43,12 @@ const Item = styled(Link)`
  align-items: center;
  transition: 0.5s;
  padding: 0 10px;
- ${(props) => props.hover !== false && `&:hover{
-   background-color: white;
-   color:#ef5350;
- }`}
+ ${(props) => props.hover !== false && `
+   &:hover{
+     background-color: white;
+     color:#ef5350;
+  }`
+}
 
 `
 
