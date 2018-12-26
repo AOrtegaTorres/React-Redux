@@ -43,7 +43,7 @@ const Item = styled(Link)`
  align-items: center;
  transition: 0.5s;
  padding: 0 10px;
- ${(props) => props.hover !== false && `
+ ${(props) => !props.withOutHover  && `
    &:hover{
      background-color: white;
      color:#ef5350;
@@ -56,7 +56,7 @@ function Navbar(){
  return(
    <NavbarContainer>
      <CenterNav>
-       <Item hover={false} to="/"><Logo src={Pokemon_logo} /></Item>
+       <Item withOutHover to="/"><Logo src={Pokemon_logo} /></Item>
        <SearchContainer>
          <Item to='/pokedex'>Pokedex</Item>
          <Item to='/games'>Games</Item>

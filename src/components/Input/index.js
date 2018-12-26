@@ -6,7 +6,12 @@ const InputWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
 `
+const Input = styled.input`
 
-function Input(props){
+`
 
+function InputComponent(props){
+  
 }
+
+export default InputComponent
