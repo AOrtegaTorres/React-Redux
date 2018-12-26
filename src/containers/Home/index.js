@@ -1,19 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as homeActions  from '../../modules/home';
+
+import { Container } from './styles'
+
 
 class Home extends React.Component{
   constructor(props){
     super(props)
   }
+
+
+  componentDidMount(){
+    this.props.setPokemon(['Bulbasur'])
+  }
+
+
   render(){
-    console.log(this.props);
+    console.log(this.props,'props home');
     return(
-      <div>
+      <Container>
         probando
-      </div>
+      </Container>
     )
   }
 }
 
 
-export default connect((state)=> state)(Home)
+export default connect(state=> ({home:state.home}), homeActions)(Home)

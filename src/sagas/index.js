@@ -1,11 +1,11 @@
 import { put, call, takeLatest,fork } from 'redux-saga/effects';
 
-function* testing(){
-  console.log('ejecutando saga');
+function* requestFirstPokemon(){
+
 }
 
 export default function* rootSaga(){
   yield [
-    fork(testing)
+    fork(requestFirstPokemon)
   ]
 }

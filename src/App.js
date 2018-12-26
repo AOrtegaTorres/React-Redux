@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import configureStore from './configureStore';
 
 import Home from './containers/Home';
+import Navbar from './components/Navbar';
 
 const store = configureStore();
 
@@ -13,7 +14,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Route exact path='/' component={Home} />
+          <div>            
+            <Navbar />
+            <Route exact path='/' component={Home} />
+          </div>
         </Router>
       </Provider>
     );
