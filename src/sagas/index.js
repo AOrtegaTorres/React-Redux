@@ -1,11 +1,13 @@
 import { put, call, takeLatest,fork } from 'redux-saga/effects';
+import { GET_POKEMON_GENERATIONS } from '../modules/home';
 
-function* requestFirstPokemon(){
+function* requestPokemonGenerations(){
 
 }
 
 export default function* rootSaga(){
   yield [
-    fork(requestFirstPokemon)
+    takeLatest(GET_POKEMON_GENERATIONS,requestPokemonGenerations),
+    fork(requestPokemonGenerations)
   ]
 }

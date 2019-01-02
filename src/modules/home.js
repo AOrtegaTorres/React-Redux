@@ -1,16 +1,16 @@
-const GET_FIRST_POKEMON = 'pokemon/Home/GET_FIRST_POKEMON';
-const SET_POKEMON = 'pokemon/home/SET_POKEMON';
+export const GET_POKEMON_GENERATIONS = 'pokemon/Home/GET_POKEMON_GENERATIONS';
+export const SET_POKEMON_GENERATIONS = 'pokemon/home/SET_POKEMON_GENERATIONS';
 
 const initialState = {
-  pokemonId:1,
-  pokemon:[]
+  generations:[1,7],
+  generationsData: []
 }
 
 export default function reducer(state = initialState,action){
   switch (action.type) {
-    case GET_FIRST_POKEMON:
+    case GET_POKEMON_GENERATIONS:
       return state;
-    case SET_POKEMON:
+    case SET_POKEMON_GENERATIONS:
       state.pokemon = action.pokemon
       return {...state}
     default:
@@ -18,15 +18,15 @@ export default function reducer(state = initialState,action){
   }
 }
 
-export function getFirstPokemon(){
+export function getPokemonGenerations(){
   return{
-    type:GET_FIRST_POKEMON
+    type:GET_POKEMON_GENERATIONS
   }
 }
 
-export function setPokemon(pokemon){
+export function setPokemonGenerations(pokemon){
   return {
-    type: SET_POKEMON,
+    type: SET_POKEMON_GENERATIONS,
     pokemon
   }
 }

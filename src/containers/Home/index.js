@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as homeActions  from '../../modules/home';
 
-import { Container } from './styles'
+// Styles
+import { Container } from './styles';
+
+// Components
+import Card from '../../components/Card';
 
 
 class Home extends React.Component{
@@ -13,14 +17,21 @@ class Home extends React.Component{
 
 
   componentDidMount(){
-    this.props.setPokemon(['Bulbasur'])
+    
   }
 
 
   render(){
+
+    const { generationsData } = this.props.home
+
     return(
       <Container>
-        probando
+        {generationsData.map(( generation )=>{
+          return(
+            <Card/>
+          )
+        })}
       </Container>
     )
   }

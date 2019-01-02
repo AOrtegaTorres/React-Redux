@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Pokemon_logo from '../../assets/images/Pokemon_logo.png';
 
@@ -35,7 +35,7 @@ const SearchContainer = styled.div`
   align-items: center;
 `;
 
-const Item = styled(Link)`
+const Item = styled(NavLink)`
  height: 100%;
  color: white;
  text-decoration: none;
@@ -48,9 +48,8 @@ const Item = styled(Link)`
      background-color: white;
      color:#ef5350;
   }`
-}
-
-`
+};
+`;
 
 function Navbar(){
  return(
@@ -58,8 +57,8 @@ function Navbar(){
      <CenterNav>
        <Item withOutHover to="/"><Logo src={Pokemon_logo} /></Item>
        <SearchContainer>
-         <Item to='/pokedex'>Pokedex</Item>
-         <Item to='/games'>Games</Item>
+         <Item to='/pokedex' activeClassName="activeItem">Pokedex</Item>
+         <Item to='/games' activeClassName="activeItem">Games</Item>
        </SearchContainer>
      </CenterNav>
    </NavbarContainer>

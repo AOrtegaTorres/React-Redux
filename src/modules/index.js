@@ -4,7 +4,7 @@ import home from './home';
 
 const reducer = combineReducers({
   home,
-  forms:formReducer,
+  forms: formReducer,
 });
 
 export default reducer;
