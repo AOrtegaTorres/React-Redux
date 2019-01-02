@@ -8,6 +8,7 @@ import { Container } from './styles';
 
 // Components
 import Card from '../../components/Card';
+import Loading from '../../components/Loading';
 
 
 class Home extends React.Component{
@@ -17,19 +18,20 @@ class Home extends React.Component{
 
 
   componentDidMount(){
-    
+    const { generations } = this.props.home;
+    this.props.getPokemonGenerations(generations);
   }
 
 
   render(){
-
     const { generationsData } = this.props.home
 
     return(
       <Container>
-        {generationsData.map(( generation )=>{
+        <Loading loading={this.props.loading}/>
+        {generationsData.map(( generation, i )=>{          
           return(
-            <Card/>
+            <Card key={`generation${i}` }/>
           )
         })}
       </Container>
@@ -37,5 +39,6 @@ class Home extends React.Component{
   }
 }
 
+const mapStateToProps = state => ({home:state.home,loading:state.root.loading})
 
-export default connect(state=> ({home:state.home}), homeActions)(Home)
+export default connect(mapStateToProps, dispatch => bindActionCreators(homeActions, dispatch))(Home)

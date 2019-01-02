@@ -10,8 +10,8 @@ const Input = styled.input`
 
 `
 
-function InputComponent(props){
-  
+const InputComponent = (props) => {
+
 }
 
 export default InputComponent

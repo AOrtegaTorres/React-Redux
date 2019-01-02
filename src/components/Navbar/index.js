@@ -51,7 +51,7 @@ const Item = styled(NavLink)`
 };
 `;
 
-function Navbar(){
+const Navbar = () => {
  return(
    <NavbarContainer>
      <CenterNav>

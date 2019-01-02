@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   width: 25%;
   margin-top: 10px;
+  margin-bottom: 25px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -36,7 +37,7 @@ const Paragraph = styled.p`
   color: #323232;
 `;
 
-function Card(props){
+const Card = (props) => {
   return (
     <Wrapper>
       <CardWrapperTitle>
