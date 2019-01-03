@@ -41,11 +41,14 @@ const Card = (props) => {
   return (
     <Wrapper>
       <CardWrapperTitle>
-        <CardText>Generation I</CardText>
+        <CardText>{ props.generation }</CardText>
       </CardWrapperTitle>
       <CardBody>
         <Paragraph>
-          First Pokemon Generation
+          {`Main region in this generation: ${props.region.toUpperCase()}`}
+        </Paragraph>
+        <Paragraph>
+          {`New Pokemon: ${props.totalPokemon}`}
         </Paragraph>
       </CardBody>
     </Wrapper>

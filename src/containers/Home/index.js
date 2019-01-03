@@ -29,9 +29,11 @@ class Home extends React.Component{
     return(
       <Container>
         <Loading loading={this.props.loading}/>
-        {generationsData.map(( generation, i )=>{          
+        {generationsData.map(( generation, i )=>{
+          const { main_region, name, pokemon_species } = generation
+          console.log(generation);
           return(
-            <Card key={`generation${i}` }/>
+            <Card key={`generation${i}`} region={main_region.name} generation={name} totalPokemon={pokemon_species.length} />
           )
         })}
       </Container>
