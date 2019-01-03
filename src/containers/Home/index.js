@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as homeActions  from '../../modules/home';
 
 // Styles
-import { Container } from './styles';
+import { Container, ContentWrapper } from './styles';
 
 // Components
 import Card from '../../components/Card';
@@ -18,9 +18,16 @@ class Home extends React.Component{
 
 
   componentDidMount(){
-    const { generations } = this.props.home;
-    this.props.getPokemonGenerations(generations);
+    const { generations, generationsData } = this.props.home;
+    if (generationsData.length === 0) {
+      this.props.getPokemonGenerations(generations);
+    }
   }
+
+  handleClickButton(){
+
+  }
+
 
 
   render(){
@@ -29,13 +36,13 @@ class Home extends React.Component{
     return(
       <Container>
         <Loading loading={this.props.loading}/>
-        {generationsData.map(( generation, i )=>{
-          const { main_region, name, pokemon_species } = generation
-          console.log(generation);
-          return(
-            <Card key={`generation${i}`} region={main_region.name} generation={name} totalPokemon={pokemon_species.length} />
-          )
-        })}
+        <ContentWrapper>
+          {generationsData.map(( generation, i )=>{          
+            return(
+              <Card key={`generation${i}`} data={generation} index={i} />
+            )
+          })}
+        </ContentWrapper>
       </Container>
     )
   }

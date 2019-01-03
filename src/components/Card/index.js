@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Button from '../Button';
+
 const Wrapper = styled.div`
   width: 25%;
   margin-top: 10px;
@@ -9,7 +11,6 @@ const Wrapper = styled.div`
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   border-radius: 5px;
   border: 1px solid #ccc;
 `;
@@ -38,18 +39,20 @@ const Paragraph = styled.p`
 `;
 
 const Card = (props) => {
+  const { main_region: { name },pokemon_species } = props.data
   return (
     <Wrapper>
       <CardWrapperTitle>
-        <CardText>{ props.generation }</CardText>
+        <CardText>{ props.data.name }</CardText>
       </CardWrapperTitle>
       <CardBody>
         <Paragraph>
-          {`Main region in this generation: ${props.region.toUpperCase()}`}
+          {`Main region in this generation: ${name.toUpperCase()}`}
         </Paragraph>
         <Paragraph>
-          {`New Pokemon: ${props.totalPokemon}`}
+          {`New Pokemon: ${pokemon_species.length}`}
         </Paragraph>
+        <Button text='More...' index={props.index}/>
       </CardBody>
     </Wrapper>
   )

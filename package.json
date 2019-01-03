@@ -9,6 +9,7 @@
     "i": "^0.3.6",
     "npm": "^6.5.0",
     "react": "^16.7.0",
+    "react-collapsible": "^2.3.2",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
